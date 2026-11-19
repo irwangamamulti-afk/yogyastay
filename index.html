@@ -199,7 +199,7 @@
           <div class="max-w-3xl">
             <p class="section-kicker uppercase text-xs font-extrabold text-emerald-700">Kategori Lokasi Tinggal</p>
             <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Provinsi Daerah Istimewa Yogyakarta (DIY)</h2>
-            <p class="text-gray-600 leading-7 mt-3">Cakupan wilayah tinggal & layanan pendukung di 4 kabupaten dan 1 kota di Provinsi DIY. Pilih wilayah atau ketik nama lokasi/alamat/patokan pada kotak pencarian.</p>
+            <p class="text-gray-600 leading-7 mt-3">Cakupan wilayah tinggal & layanan pendukung di 4 kabupaten dan 1 kota di Provinsi DIY. Pilih wilayah atau ketik nama lokasi, alamat, atau patokan pada kotak pencarian.</p>
           </div>
 
           <!-- Kotak Pencarian Lokasi Yogyastay -->
@@ -230,7 +230,7 @@
         <div id="search-results-wrapper" class="hidden mt-6 rounded-3xl bg-white border border-emerald-200 p-5 sm:p-6 shadow-sm">
           <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-emerald-100">
             <p id="search-results-count" class="text-sm font-bold text-emerald-950"></p>
-            <span class="text-xs text-gray-500">Klik lokasi untuk menampilkan detail & tautan WhatsApp</span>
+            <span id="sheet-status-text" class="text-xs text-gray-500">Klik lokasi untuk menampilkan detail & tautan WhatsApp</span>
           </div>
           <div id="search-results-list" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4"></div>
         </div>
@@ -361,10 +361,14 @@
     };
 
     /*
-      Daftar alamat dan titik lokasi Yogyastay.
-      Nilai `wilayah`: 'bantul' | 'gunungkidul' | 'kulonprogo' | 'sleman' | 'yogyakarta'
+      Tempelkan URL Publish to web (.csv) dari Google Sheets di bawah ini.
+      Kolom wajib di baris 1 Google Sheets:
+      id | wilayah | nama | alamat | patokan | layanan | mapsQuery
+      Nilai wilayah: bantul | gunungkidul | kulonprogo | sleman | yogyakarta
     */
-    const DAFTAR_LOKASI_YOGYASTAY = [
+    const GOOGLE_SHEET_CSV_URL = '';
+
+    let DAFTAR_LOKASI_YOGYASTAY = [
       {
         id: 'kembang-putih-bantul',
         wilayah: 'bantul',
@@ -429,6 +433,74 @@
       }
     };
 
+    function parseCsvLine(line) {
+      const cells = [];
+      let current = '';
+      let inQuotes = false;
+
+      for (let i = 0; i < line.length; i++) {
+        const ch = line[i];
+        if (ch === '"') {
+          if (inQuotes && line[i + 1] === '"') {
+            current += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (ch === ',' && !inQuotes) {
+          cells.push(current.trim());
+          current = '';
+        } else {
+          current += ch;
+        }
+      }
+      cells.push(current.trim());
+      return cells;
+    }
+
+    function parseLokasiCsv(csvText) {
+      const lines = csvText
+        .split(/\r?\n/)
+        .map(function (l) { return l.trim(); })
+        .filter(function (l) { return l.length > 0; });
+
+      if (lines.length < 2) return [];
+
+      const headers = parseCsvLine(lines[0]).map(function (h) { return h.toLowerCase(); });
+      const idx = {
+        id: headers.indexOf('id'),
+        wilayah: headers.indexOf('wilayah'),
+        nama: headers.indexOf('nama'),
+        alamat: headers.indexOf('alamat'),
+        patokan: headers.indexOf('patokan'),
+        layanan: headers.indexOf('layanan'),
+        mapsQuery: headers.indexOf('mapsquery')
+      };
+
+      const parsed = [];
+      for (let i = 1; i < lines.length; i++) {
+        const row = parseCsvLine(lines[i]);
+        const nama = idx.nama >= 0 ? (row[idx.nama] || '') : '';
+        const alamat = idx.alamat >= 0 ? (row[idx.alamat] || '') : '';
+        if (!nama && !alamat) continue;
+
+        const rawWilayah = (idx.wilayah >= 0 ? (row[idx.wilayah] || 'bantul') : 'bantul').toLowerCase().replace(/\s+/g, '');
+        const wilayahKey = WILAYAH_DIY[rawWilayah] ? rawWilayah : 'bantul';
+        const fallbackQuery = encodeURIComponent(`${nama} ${alamat}`.trim() || 'Yogyakarta');
+
+        parsed.push({
+          id: (idx.id >= 0 && row[idx.id]) ? row[idx.id] : `lokasi-${i}`,
+          wilayah: wilayahKey,
+          nama: nama || 'Yogyastay',
+          alamat: alamat,
+          patokan: idx.patokan >= 0 ? (row[idx.patokan] || '') : '',
+          layanan: idx.layanan >= 0 ? (row[idx.layanan] || 'Sewa hunian fleksibel, sewa mobil & laundry') : 'Sewa hunian fleksibel, sewa mobil & laundry',
+          mapsQuery: (idx.mapsQuery >= 0 && row[idx.mapsQuery]) ? row[idx.mapsQuery] : fallbackQuery
+        });
+      }
+      return parsed;
+    }
+
     function setWilayah(key, customLokasi) {
       const data = WILAYAH_DIY[key] || WILAYAH_DIY.bantul;
       document.getElementById('detail-badge').textContent = data.badge;
@@ -438,7 +510,7 @@
         : data.desc;
       document.getElementById('detail-point-label').textContent = customLokasi ? 'Alamat & Patokan Lokasi' : data.pointLabel;
       document.getElementById('detail-point-text').textContent = customLokasi
-        ? `${customLokasi.alamat} (${customLokasi.patokan}).`
+        ? `${customLokasi.alamat}${customLokasi.patokan ? ` (${customLokasi.patokan})` : ''}.`
         : data.pointText;
       document.getElementById('detail-service-text').textContent = customLokasi
         ? customLokasi.layanan
@@ -510,20 +582,41 @@
             <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700">${wilayahTitle}</span>
             <h4 class="font-extrabold text-emerald-950 mt-1">${item.nama}</h4>
             <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">${item.alamat}</p>
-            <p class="text-[11px] text-emerald-800 font-semibold mt-2"><i class="fa-solid fa-map-pin mr-1"></i>${item.patokan}</p>
+            ${item.patokan ? `<p class="text-[11px] text-emerald-800 font-semibold mt-2"><i class="fa-solid fa-map-pin mr-1"></i>${item.patokan}</p>` : ''}
           </button>
         `;
       }).join('');
 
       resultsList.querySelectorAll('.hasil-lokasi-item').forEach(function (el) {
         el.addEventListener('click', function () {
-          const found = DAFTAR_LOKASI_YOGYASTAY.find(function (x) { return x.id === el.dataset.lokasiId; });
+          const found = DAFTAR_LOKASI_YOGYASTAY.find(function (x) { return String(x.id) === String(el.dataset.lokasiId); });
           if (found) {
             setWilayah(found.wilayah, found);
             document.getElementById('wilayah-detail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
         });
       });
+    }
+
+    async function loadLokasiFromGoogleSheet() {
+      const statusEl = document.getElementById('sheet-status-text');
+      if (!GOOGLE_SHEET_CSV_URL) return;
+
+      try {
+        const res = await fetch(GOOGLE_SHEET_CSV_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('Gagal memuat Google Sheet');
+        const csvText = await res.text();
+        const sheetItems = parseLokasiCsv(csvText);
+        if (sheetItems.length > 0) {
+          DAFTAR_LOKASI_YOGYASTAY = sheetItems;
+          if (statusEl) statusEl.textContent = 'Data lokasi tersinkronisasi dari Google Sheets';
+          if (searchInput.value.trim()) {
+            renderSearchLokasi(searchInput.value);
+          }
+        }
+      } catch (err) {
+        if (statusEl) statusEl.textContent = 'Menggunakan data lokal (periksa izin Publish to web CSV Google Sheets)';
+      }
     }
 
     searchInput.addEventListener('input', function () {
@@ -549,6 +642,7 @@
     });
 
     setWilayah('bantul');
+    loadLokasiFromGoogleSheet();
 
     function placeholderSvg(label) {
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
