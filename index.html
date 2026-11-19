@@ -9,12 +9,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     :root { --forest:#064e3b; --forest2:#065f46; --gold:#f5c451; }
     body { font-family:'DM Sans',sans-serif; color:#17211d; }
-    h1,h2,h3,h4,.brand { font-family:'Manrope',sans-serif; }
+    h1 { font-family:'Plus Jakarta Sans','Manrope',sans-serif; }
+    h2,h3,h4,.brand { font-family:'Manrope',sans-serif; }
     .hero-bg { background: radial-gradient(ellipse at 12% 15%, rgba(16,185,129,.24), transparent 40%), linear-gradient(135deg,#052e24 0%,#064e3b 58%,#0b6048 100%); }
     .glass { background:rgba(255,255,255,.11); border:1px solid rgba(255,255,255,.18); backdrop-filter:blur(10px); }
     .photo { transition:transform .45s ease, filter .45s ease; }
@@ -54,7 +55,7 @@
             <!-- Lingkaran Cincin Terputus di Sisi Kanan -->
             <path d="M 192 38 A 46 46 0 1 1 192 78" stroke="url(#goldSheen)" stroke-width="4" stroke-linecap="round"/>
             <!-- Teks Utama Yogyastay.com -->
-            <text x="6" y="65" font-family="'Manrope', 'DM Sans', sans-serif" font-weight="800" font-size="38" letter-spacing="-0.03em" fill="#ffffff">
+            <text x="6" y="65" font-family="'Plus Jakarta Sans', 'Manrope', 'DM Sans', sans-serif" font-weight="800" font-size="38" letter-spacing="-0.02em" fill="#ffffff">
               Yogyastay<tspan fill="url(#goldSheen)">.com</tspan>
             </text>
             <!-- Garis Kiri -->
@@ -93,13 +94,15 @@
 
   <main>
     <section id="beranda" class="hero-bg text-white pt-32 sm:pt-36 pb-16 sm:pb-24 overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[.96fr_1.04fr] gap-10 lg:gap-14 items-center">
-        <div class="relative z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.06fr_.94fr] gap-10 lg:gap-12 items-center">
+        <div class="relative z-10 pr-0 lg:pr-4">
           <div class="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs sm:text-sm font-semibold text-emerald-50 mb-6">
             <span class="w-2 h-2 rounded-full bg-[#f5c451]"></span> Sebaiknya Solusi Kebutuhan Tinggal Anda di Jogja
           </div>
-          <h1 class="text-3xl sm:text-4xl xl:text-[3.1rem] font-extrabold leading-[1.15] tracking-tight">Hunian Nyaman, <span class="text-[#f5c451]">Sewa Mobil, hingga Laundry</span>—Semua Kebutuhan Tinggal Tersedia.</h1>
-          <p class="mt-6 text-emerald-100 text-base sm:text-lg leading-8 max-w-xl">Pilihan hunian praktis dengan area parkir luas untuk sewa harian, mingguan, bulanan, hingga tahunan. Lengkap dengan layanan sewa mobil, laundry, dan berbagai kebutuhan tinggal lainnya agar aktivitas Anda di Yogyakarta semakin mudah.</p>
+          <h1 class="text-3xl sm:text-[2.65rem] xl:text-[3.15rem] font-extrabold leading-[1.22] tracking-[-0.015em]">
+            Hunian Nyaman, <span class="text-[#f5c451]">Sewa Mobil, hingga Laundry</span>—Semua Kebutuhan Tinggal Tersedia.
+          </h1>
+          <p class="mt-6 text-emerald-100 text-base sm:text-lg leading-8 max-w-2xl">Pilihan hunian praktis dengan area parkir luas untuk sewa harian, mingguan, bulanan, hingga tahunan. Lengkap dengan layanan sewa mobil, laundry, dan berbagai kebutuhan tinggal lainnya agar aktivitas Anda di Yogyakarta semakin mudah.</p>
           <div class="flex flex-col sm:flex-row gap-3 mt-8">
             <a href="https://wa.me/6287715305408?text=Halo%20Yogyastay%2C%20saya%20ingin%20cek%20ketersediaan%20hunian%20dan%20layanan." target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-3 bg-[#f5c451] hover:bg-amber-300 text-emerald-950 font-extrabold px-7 py-4 rounded-full shadow-xl transition">
               <i class="fa-brands fa-whatsapp text-xl"></i> Tanya Ketersediaan
@@ -325,7 +328,7 @@
       <a href="#beranda" class="flex items-center" aria-label="Yogyastay">
         <svg class="h-11 w-auto overflow-visible" viewBox="0 0 380 115" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M 192 38 A 46 46 0 1 1 192 78" stroke="#f5c451" stroke-width="4" stroke-linecap="round"/>
-          <text x="6" y="65" font-family="'Manrope', 'DM Sans', sans-serif" font-weight="800" font-size="38" letter-spacing="-0.03em" fill="#ffffff">
+          <text x="6" y="65" font-family="'Plus Jakarta Sans', 'Manrope', 'DM Sans', sans-serif" font-weight="800" font-size="38" letter-spacing="-0.02em" fill="#ffffff">
             Yogyastay<tspan fill="#f5c451">.com</tspan>
           </text>
           <line x1="8" y1="84" x2="36" y2="84" stroke="#f5c451" stroke-width="2.2" stroke-linecap="round"/>
