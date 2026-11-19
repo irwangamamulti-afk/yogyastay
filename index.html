@@ -25,16 +25,6 @@
   </style>
 </head>
 <body class="bg-[#f7f8f5] antialiased">
-  <!--
-    PENGATURAN FOTO GOOGLE DRIVE:
-1. Upload foto ke Google Drive.
-2. Klik Bagikan > Akses umum > Siapa saja yang memiliki link (Viewer).
-3. Salin ID file dari URL Drive. Contoh URL:
-       https://drive.google.com/file/d/1AbCdEfGh123456/view
-       ID file adalah: 1AbCdEfGh123456
-4. Ganti GANTI_ID_FOTO_... di bagian DRIVE_PHOTOS di bawah.
-    Pastikan izin file adalah "Siapa saja yang memiliki link". Jangan gunakan link folder.
-  -->
   <header class="fixed top-0 inset-x-0 z-40 text-white transition-all duration-300" id="site-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="h-[84px] flex items-center justify-between">
@@ -48,19 +38,14 @@
                 <stop offset="100%" stop-color="#d49b27"/>
               </linearGradient>
             </defs>
-            <!-- Lingkaran Cincin Terputus di Sisi Kanan -->
             <path d="M 192 38 A 46 46 0 1 1 192 78" stroke="url(#goldSheen)" stroke-width="4" stroke-linecap="round"/>
-            <!-- Teks Utama Yogyastay.com -->
             <text x="6" y="65" font-family="'Plus Jakarta Sans', 'Manrope', 'DM Sans', sans-serif" font-weight="800" font-size="38" letter-spacing="-0.02em" fill="#ffffff">
               Yogyastay<tspan fill="url(#goldSheen)">.com</tspan>
             </text>
-            <!-- Garis Kiri -->
             <line x1="8" y1="84" x2="36" y2="84" stroke="url(#goldSheen)" stroke-width="2.2" stroke-linecap="round"/>
-            <!-- Tagline -->
             <text x="176" y="88" text-anchor="middle" font-family="'DM Sans', sans-serif" font-style="italic" font-weight="600" font-size="13.5" letter-spacing="0.01em" fill="#ecfdf5">
               Sebaiknya Solusi Kebutuhan Tinggal Anda
             </text>
-            <!-- Garis Kanan -->
             <line x1="316" y1="84" x2="346" y2="84" stroke="url(#goldSheen)" stroke-width="2.2" stroke-linecap="round"/>
           </svg>
         </a>
@@ -210,10 +195,44 @@
     <section id="lokasi" class="py-16 sm:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header Kategori Provinsi DIY -->
-        <div class="max-w-3xl">
-          <p class="section-kicker uppercase text-xs font-extrabold text-emerald-700">Kategori Lokasi Tinggal</p>
-          <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Provinsi Daerah Istimewa Yogyakarta (DIY)</h2>
-          <p class="text-gray-600 leading-7 mt-3">Cakupan wilayah tinggal & layanan pendukung di 4 kabupaten dan 1 kota di Provinsi DIY. Pilih wilayah untuk melihat detail akses dan informasi ketersediaan.</p>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div class="max-w-3xl">
+            <p class="section-kicker uppercase text-xs font-extrabold text-emerald-700">Kategori Lokasi Tinggal</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Provinsi Daerah Istimewa Yogyakarta (DIY)</h2>
+            <p class="text-gray-600 leading-7 mt-3">Cakupan wilayah tinggal & layanan pendukung di 4 kabupaten dan 1 kota di Provinsi DIY. Pilih wilayah atau ketik nama lokasi/alamat/patokan pada kotak pencarian.</p>
+          </div>
+
+          <!-- Kotak Pencarian Lokasi Yogyastay -->
+          <div class="w-full lg:w-[27rem]">
+            <label for="search-lokasi" class="block text-xs font-extrabold uppercase tracking-wider text-emerald-800 mb-2">Cari Lokasi / Alamat Yogyastay</label>
+            <div class="relative">
+              <i class="fa-solid fa-magnifying-glass text-emerald-700 absolute left-4 top-1/2 -translate-y-1/2"></i>
+              <input
+                id="search-lokasi"
+                type="search"
+                placeholder="Ketik Kembang Putih, Sleman, Bantul, jalan..."
+                class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white border border-emerald-200 text-sm text-emerald-950 placeholder:text-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600"
+                autocomplete="off"
+              >
+              <button
+                id="clear-search-lokasi"
+                type="button"
+                class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full text-gray-400 hover:text-emerald-900 hover:bg-emerald-50 flex items-center justify-center transition"
+                aria-label="Hapus pencarian lokasi"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hasil Pencarian Alamat / Titik Lokasi Yogyastay -->
+        <div id="search-results-wrapper" class="hidden mt-6 rounded-3xl bg-white border border-emerald-200 p-5 sm:p-6 shadow-sm">
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-emerald-100">
+            <p id="search-results-count" class="text-sm font-bold text-emerald-950"></p>
+            <span class="text-xs text-gray-500">Klik lokasi untuk menampilkan detail & tautan WhatsApp</span>
+          </div>
+          <div id="search-results-list" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4"></div>
         </div>
 
         <!-- Daftar 5 Kategori Wilayah (4 Kabupaten & 1 Kota) -->
@@ -341,6 +360,42 @@
       depan: 'images/depan.jpg'
     };
 
+    /*
+      CONTOH DAFTAR ALAMAT / TITIK LOKASI YOGYASTAY.
+      Anda bisa menambah, menghapus, atau mengedit item di dalam array ini.
+      Nilai `wilayah` harus salah satu dari:
+      'bantul' | 'gunungkidul' | 'kulonprogo' | 'sleman' | 'yogyakarta'
+    */
+    const DAFTAR_LOKASI_YOGYASTAY = [
+      {
+        id: 'kembang-putih-bantul',
+        wilayah: 'bantul',
+        nama: 'Yogyastay Perumahan Kembang Putih',
+        alamat: 'Perumahan Kembang Putih, Kabupaten Bantul, Daerah Istimewa Yogyakarta',
+        patokan: 'Dekat Puncak Bibis & kawasan kampus baru UIN Sunan Kalijaga',
+        layanan: 'Sewa harian–tahunan, area parkir luas, sewa mobil, laundry',
+        mapsQuery: 'Perumahan+Kembang+Putih+Bantul+Yogyakarta'
+      },
+      {
+        id: 'contoh-sleman-depok',
+        wilayah: 'sleman',
+        nama: 'Yogyastay Contoh Lokasi Sleman (Edit/Tambah Sesuai Data)',
+        alamat: 'Jl. Contoh Kaliurang / Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta',
+        patokan: 'Akses jalur utara DIY & kawasan kampus',
+        layanan: 'Sewa fleksibel, parkir luas, sewa mobil & laundry',
+        mapsQuery: 'Depok+Sleman+Daerah+Istimewa+Yogyakarta'
+      },
+      {
+        id: 'contoh-kota-jogja',
+        wilayah: 'yogyakarta',
+        nama: 'Yogyastay Contoh Lokasi Kota Yogyakarta (Edit/Tambah Sesuai Data)',
+        alamat: 'Jl. Contoh Pusat Kota, Kota Yogyakarta, Daerah Istimewa Yogyakarta',
+        patokan: 'Dekat pusat kota & jalur utama Yogyakarta',
+        layanan: 'Sewa harian–bulanan, sewa mobil & laundry',
+        mapsQuery: 'Kota+Yogyakarta+Daerah+Istimewa+Yogyakarta'
+      }
+    ];
+
     const WILAYAH_DIY = {
       bantul: {
         badge: 'Provinsi DIY • Kabupaten',
@@ -394,19 +449,31 @@
       }
     };
 
-    function setWilayah(key) {
+    function setWilayah(key, customLokasi) {
       const data = WILAYAH_DIY[key] || WILAYAH_DIY.bantul;
       document.getElementById('detail-badge').textContent = data.badge;
-      document.getElementById('detail-title').textContent = data.title;
-      document.getElementById('detail-desc').textContent = data.desc;
-      document.getElementById('detail-point-label').textContent = data.pointLabel;
-      document.getElementById('detail-point-text').textContent = data.pointText;
-      document.getElementById('detail-service-text').textContent = data.serviceText;
-      document.getElementById('detail-maps-link').href = `https://www.google.com/maps/search/?api=1&query=${data.mapsQuery}`;
-      document.getElementById('detail-maps-label').textContent = data.mapsLabel;
-      document.getElementById('detail-wa-label').textContent = `Tanya Ketersediaan di ${data.title}`;
+      document.getElementById('detail-title').textContent = customLokasi ? customLokasi.nama : data.title;
+      document.getElementById('detail-desc').textContent = customLokasi
+        ? `${customLokasi.alamat}. ${data.desc}`
+        : data.desc;
+      document.getElementById('detail-point-label').textContent = customLokasi ? 'Alamat & Patokan Lokasi' : data.pointLabel;
+      document.getElementById('detail-point-text').textContent = customLokasi
+        ? `${customLokasi.alamat} (${customLokasi.patokan}).`
+        : data.pointText;
+      document.getElementById('detail-service-text').textContent = customLokasi
+        ? customLokasi.layanan
+        : data.serviceText;
 
-      const waText = `Halo Yogyastay,\nSaya ingin bertanya tentang hunian & layanan di ${data.title}, DIY.\nDurasi sewa: \nTanggal mulai: \nKebutuhan tambahan (sewa mobil/laundry): `;
+      const query = customLokasi ? customLokasi.mapsQuery : data.mapsQuery;
+      document.getElementById('detail-maps-link').href = `https://www.google.com/maps/search/?api=1&query=${query}`;
+      document.getElementById('detail-maps-label').textContent = customLokasi
+        ? `Buka ${customLokasi.nama} di Maps`
+        : data.mapsLabel;
+
+      const targetLabel = customLokasi ? `${customLokasi.nama} (${data.title})` : data.title;
+      document.getElementById('detail-wa-label').textContent = `Tanya Ketersediaan di ${targetLabel}`;
+
+      const waText = `Halo Yogyastay,\nSaya ingin bertanya tentang hunian & layanan di ${targetLabel}, DIY.\nDurasi sewa: \nTanggal mulai: \nKebutuhan tambahan (sewa mobil/laundry): `;
       document.getElementById('detail-wa-link').href = `https://wa.me/6287715305408?text=${encodeURIComponent(waText)}`;
 
       document.querySelectorAll('.wilayah-btn').forEach(function (btn) {
@@ -424,6 +491,70 @@
           : 'wilayah-card text-left rounded-2xl border border-gray-200 bg-white hover:border-emerald-400 p-4 transition lift';
       });
     }
+
+    const searchInput = document.getElementById('search-lokasi');
+    const clearSearchBtn = document.getElementById('clear-search-lokasi');
+    const resultsWrapper = document.getElementById('search-results-wrapper');
+    const resultsCount = document.getElementById('search-results-count');
+    const resultsList = document.getElementById('search-results-list');
+
+    function renderSearchLokasi(rawQuery) {
+      const q = (rawQuery || '').trim().toLowerCase();
+      clearSearchBtn.classList.toggle('hidden', q.length === 0);
+
+      if (!q) {
+        resultsWrapper.classList.add('hidden');
+        resultsList.innerHTML = '';
+        return;
+      }
+
+      const matches = DAFTAR_LOKASI_YOGYASTAY.filter(function (item) {
+        const wilayahTitle = (WILAYAH_DIY[item.wilayah] && WILAYAH_DIY[item.wilayah].title) || '';
+        const haystack = `${item.nama} ${item.alamat} ${item.patokan} ${item.layanan} ${wilayahTitle}`.toLowerCase();
+        return haystack.includes(q);
+      });
+
+      resultsWrapper.classList.remove('hidden');
+
+      if (matches.length === 0) {
+        resultsCount.textContent = `Tidak ditemukan lokasi terdaftar untuk "${rawQuery.trim()}".`;
+        resultsList.innerHTML = `<div class="col-span-full text-sm text-gray-600 py-2">Anda tetap bisa memilih kategori kabupaten/kota di bawah atau langsung menanyakan ketersediaan lokasi tersebut melalui WhatsApp pengelola.</div>`;
+        return;
+      }
+
+      resultsCount.textContent = `Ditemukan ${matches.length} lokasi untuk "${rawQuery.trim()}"`;
+      resultsList.innerHTML = matches.map(function (item) {
+        const wilayahTitle = (WILAYAH_DIY[item.wilayah] && WILAYAH_DIY[item.wilayah].title) || '';
+        return `
+          <button type="button" data-lokasi-id="${item.id}" class="hasil-lokasi-item text-left rounded-2xl border border-emerald-100 hover:border-emerald-600 bg-[#f8faf8] p-4 transition lift">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700">${wilayahTitle}</span>
+            <h4 class="font-extrabold text-emerald-950 mt-1">${item.nama}</h4>
+            <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">${item.alamat}</p>
+            <p class="text-[11px] text-emerald-800 font-semibold mt-2"><i class="fa-solid fa-map-pin mr-1"></i>${item.patokan}</p>
+          </button>
+        `;
+      }).join('');
+
+      resultsList.querySelectorAll('.hasil-lokasi-item').forEach(function (el) {
+        el.addEventListener('click', function () {
+          const found = DAFTAR_LOKASI_YOGYASTAY.find(function (x) { return x.id === el.dataset.lokasiId; });
+          if (found) {
+            setWilayah(found.wilayah, found);
+            document.getElementById('wilayah-detail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+      });
+    }
+
+    searchInput.addEventListener('input', function () {
+      renderSearchLokasi(searchInput.value);
+    });
+
+    clearSearchBtn.addEventListener('click', function () {
+      searchInput.value = '';
+      renderSearchLokasi('');
+      searchInput.focus();
+    });
 
     document.querySelectorAll('.wilayah-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
