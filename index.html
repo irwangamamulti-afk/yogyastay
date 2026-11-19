@@ -62,4 +62,434 @@
             </text>
             <!-- Garis Kanan -->
             <line x1="316" y1="84" x2="346" y2="84" stroke="url(#goldSheen)" stroke-width="2.2" stroke-linecap="round"/>
-          </
+          </svg>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-emerald-50">
+          <a class="hover:text-[#f5c451]" href="#beranda">Beranda</a>
+          <a class="hover:text-[#f5c451]" href="#tentang">Tentang</a>
+          <a class="hover:text-[#f5c451]" href="#fasilitas">Fasilitas & Layanan</a>
+          <a class="hover:text-[#f5c451]" href="#lokasi">Lokasi Tinggal</a>
+        </nav>
+        <a href="https://wa.me/6287715305408?text=Halo%20Yogyastay%2C%20saya%20ingin%20bertanya%20tentang%20hunian%20dan%20layanan." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-[#f5c451] hover:bg-amber-300 text-emerald-950 font-bold text-sm px-5 py-3 rounded-full shadow-lg transition">
+          <i class="fa-brands fa-whatsapp text-lg"></i> Reservasi
+        </a>
+        <button id="menu-btn" class="lg:hidden w-11 h-11 rounded-xl glass text-xl" aria-label="Buka menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <nav id="mobile-menu" class="hidden lg:hidden glass rounded-2xl p-4 mb-4 space-y-1 shadow-xl">
+        <a class="block rounded-lg px-3 py-2 hover:bg-white/10" href="#beranda">Beranda</a>
+        <a class="block rounded-lg px-3 py-2 hover:bg-white/10" href="#tentang">Tentang Yogyastay</a>
+        <a class="block rounded-lg px-3 py-2 hover:bg-white/10" href="#fasilitas">Fasilitas & Layanan</a>
+        <a class="block rounded-lg px-3 py-2 hover:bg-white/10" href="#lokasi">Lokasi Tinggal & Kontak</a>
+        <a class="block rounded-lg px-3 py-2 font-bold text-[#f5c451]" href="https://wa.me/6287715305408?text=Halo%20Yogyastay%2C%20saya%20ingin%20bertanya%20tentang%20hunian%20dan%20layanan." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp mr-2"></i>Chat WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="beranda" class="hero-bg text-white pt-32 sm:pt-36 pb-16 sm:pb-24 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.06fr_.94fr] gap-10 lg:gap-12 items-center">
+        <div class="relative z-10 pr-0 lg:pr-4">
+          <div class="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs sm:text-sm font-semibold text-emerald-50 mb-6">
+            <span class="w-2 h-2 rounded-full bg-[#f5c451]"></span> Sebaiknya Solusi Kebutuhan Tinggal Anda di Jogja
+          </div>
+          <h1 class="text-3xl sm:text-[2.65rem] xl:text-[3.15rem] font-extrabold leading-[1.22] tracking-[-0.015em]">
+            Hunian Nyaman, <span class="text-[#f5c451]">Sewa Mobil, hingga Laundry</span>—Semua Kebutuhan Tinggal Tersedia.
+          </h1>
+          <p class="mt-6 text-emerald-100 text-base sm:text-lg leading-8 max-w-2xl">Pilihan hunian praktis dengan area parkir luas untuk sewa harian, mingguan, bulanan, hingga tahunan. Lengkap dengan layanan sewa mobil, laundry, dan berbagai kebutuhan tinggal lainnya agar aktivitas Anda di Yogyakarta semakin mudah.</p>
+          <div class="flex flex-col sm:flex-row gap-3 mt-8">
+            <a href="https://wa.me/6287715305408?text=Halo%20Yogyastay%2C%20saya%20ingin%20cek%20ketersediaan%20hunian%20dan%20layanan." target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-3 bg-[#f5c451] hover:bg-amber-300 text-emerald-950 font-extrabold px-7 py-4 rounded-full shadow-xl transition">
+              <i class="fa-brands fa-whatsapp text-xl"></i> Tanya Ketersediaan
+            </a>
+            <a href="#fasilitas" class="inline-flex justify-center items-center gap-2 border border-white/30 hover:bg-white/10 px-7 py-4 rounded-full font-bold transition"><i class="fa-solid fa-layer-group"></i> Lihat Layanan</a>
+          </div>
+          <div class="grid grid-cols-3 gap-3 mt-10 max-w-lg">
+            <div class="glass rounded-2xl p-4"><i class="fa-solid fa-calendar-check text-[#f5c451] text-xl"></i><strong class="block text-xl sm:text-2xl mt-2">Fleksibel</strong><span class="text-xs text-emerald-100">Harian – Tahunan</span></div>
+            <div class="glass rounded-2xl p-4"><i class="fa-solid fa-car text-[#f5c451] text-xl"></i><strong class="block text-xl sm:text-2xl mt-2">Lengkap</strong><span class="text-xs text-emerald-100">Sewa Mobil & Laundry</span></div>
+            <div class="glass rounded-2xl p-4"><i class="fa-solid fa-square-parking text-[#f5c451] text-xl"></i><strong class="block text-xl sm:text-2xl mt-2">Luas</strong><span class="text-xs text-emerald-100">Area Parkir</span></div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-[2rem] border border-white/10 rotate-2"></div>
+          <div class="relative rounded-[1.7rem] overflow-hidden shadow-2xl border border-white/20 bg-emerald-950">
+            <img id="hero-photo" class="w-full h-[330px] sm:h-[460px] object-cover" alt="Tampak depan Yogyastay" loading="eager">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-0 inset-x-0 p-5 sm:p-7">
+              <span class="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-3 py-1.5 text-xs font-semibold"><i class="fa-solid fa-location-dot text-[#f5c451]"></i> Provinsi Daerah Istimewa Yogyakarta</span>
+              <p class="text-xl sm:text-2xl font-extrabold mt-3">Satu tempat untuk semua kebutuhan tinggal</p>
+              <p class="text-sm text-white/80 mt-1">Hunian fleksibel, parkir luas, dan layanan pendukung praktis di Jogja.</p>
+            </div>
+          </div>
+          <div class="hidden sm:flex absolute -left-8 bottom-10 bg-white text-emerald-950 p-4 rounded-2xl shadow-xl items-center gap-3">
+            <span class="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-800 text-xl"><i class="fa-solid fa-bell-concierge"></i></span>
+            <span><strong class="block text-sm">Layanan Terpadu</strong><small class="text-gray-500">Hunian, Transportasi & Laundry</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="section-kicker uppercase text-xs font-extrabold text-emerald-700">Selamat datang</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-3 leading-tight">Tempat tinggal praktis dengan dukungan layanan lengkap di Jogja.</h2>
+          <p class="mt-5 text-gray-600 leading-8">Yogyastay hadir sebagai solusi kebutuhan tinggal Anda selama berada di Yogyakarta—baik untuk singgah harian, mingguan, bulanan, maupun tahunan. Dilengkapi dua kamar tidur, ruang berkumpul, area parkir luas, serta layanan tambahan seperti sewa mobil dan laundry agar urusan harian maupun perjalanan Anda lebih ringan.</p>
+        </div>
+        <div class="space-y-4">
+          <div class="lift rounded-2xl bg-white border border-emerald-100 p-5 sm:p-6 flex items-start gap-4">
+            <span class="w-11 h-11 shrink-0 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+            <div>
+              <h3 class="font-extrabold text-emerald-950 text-base sm:text-lg">Durasi sewa fleksibel</h3>
+              <p class="text-sm sm:text-base text-gray-600 mt-1 leading-relaxed">Tersedia pilihan sewa harian, mingguan, bulanan, hingga tahunan sesuai kebutuhan Anda.</p>
+            </div>
+          </div>
+          <div class="lift rounded-2xl bg-white border border-emerald-100 p-5 sm:p-6 flex items-start gap-4">
+            <span class="w-11 h-11 shrink-0 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+            <div>
+              <h3 class="font-extrabold text-emerald-950 text-base sm:text-lg">Parkir lebih leluasa</h3>
+              <p class="text-sm sm:text-base text-gray-600 mt-1 leading-relaxed">Teras, garasi, dan halaman luas untuk kendaraan pribadi maupun unit sewa.</p>
+            </div>
+          </div>
+          <div class="lift rounded-2xl bg-white border border-emerald-100 p-5 sm:p-6 flex items-start gap-4">
+            <span class="w-11 h-11 shrink-0 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+            <div>
+              <h3 class="font-extrabold text-emerald-950 text-base sm:text-lg">Layanan pendukung satu pintu</h3>
+              <p class="text-sm sm:text-base text-gray-600 mt-1 leading-relaxed">Kemudahan akses sewa mobil, laundry, dan kebutuhan tinggal lainnya langsung dari pengelola.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fasilitas" class="py-16 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="section-kicker uppercase text-xs font-extrabold text-emerald-700">Yang tersedia</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">Fasilitas & Layanan</h2>
+          <p class="text-gray-500 mt-4 leading-7">Kelengkapan fasilitas rumah dan layanan pendukung untuk memudahkan aktivitas Anda selama tinggal di Yogyakarta.</p>
+        </div>
+
+        <!-- Layanan Utama & Pendukung -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mt-10">
+          <div class="lift rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5 sm:p-6">
+            <span class="w-12 h-12 rounded-2xl bg-emerald-800 text-[#f5c451] flex items-center justify-center text-xl"><i class="fa-solid fa-house-circle-check"></i></span>
+            <h3 class="font-extrabold mt-4 text-emerald-950">Sewa Hunian Fleksibel</h3>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Pilihan durasi tinggal mulai dari harian, mingguan, bulanan, hingga tahunan.</p>
+          </div>
+          <div class="lift rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5 sm:p-6">
+            <span class="w-12 h-12 rounded-2xl bg-emerald-800 text-[#f5c451] flex items-center justify-center text-xl"><i class="fa-solid fa-car"></i></span>
+            <h3 class="font-extrabold mt-4 text-emerald-950">Sewa Mobil & Transportasi</h3>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Tersedia layanan sewa mobil untuk mobilitas harian, wisata, maupun urusan kerja di Jogja, didukung area parkir rumah yang luas.</p>
+          </div>
+          <div class="lift rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5 sm:p-6">
+            <span class="w-12 h-12 rounded-2xl bg-emerald-800 text-[#f5c451] flex items-center justify-center text-xl"><i class="fa-solid fa-shirt"></i></span>
+            <h3 class="font-extrabold mt-4 text-emerald-950">Layanan Laundry</h3>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Kemudahan cuci pakaian praktis tanpa perlu repot mencari tempat laundry di luar.</p>
+          </div>
+          <div class="lift rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5 sm:p-6">
+            <span class="w-12 h-12 rounded-2xl bg-emerald-800 text-[#f5c451] flex items-center justify-center text-xl"><i class="fa-solid fa-hand-holding-heart"></i></span>
+            <h3 class="font-extrabold mt-4 text-emerald-950">Kebutuhan Tinggal Lainnya</h3>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Siap membantu berbagai keperluan tambahan selama Anda tinggal di Yogyakarta.</p>
+          </div>
+        </div>
+
+        <!-- Fasilitas Fisik Properti -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 mt-5">
+          <div class="lift rounded-2xl border border-gray-100 bg-[#f8faf8] p-5 sm:p-6"><span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl"><i class="fa-solid fa-bed"></i></span><h3 class="font-extrabold mt-4">2 Kamar Tidur</h3><p class="text-sm text-gray-500 mt-2">Ruang istirahat untuk keluarga atau rombongan.</p></div>
+          <div class="lift rounded-2xl border border-gray-100 bg-[#f8faf8] p-5 sm:p-6"><span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl"><i class="fa-solid fa-bath"></i></span><h3 class="font-extrabold mt-4">1 Kamar Mandi</h3><p class="text-sm text-gray-500 mt-2">Kebutuhan mandi selama menginap.</p></div>
+          <div class="lift rounded-2xl border border-gray-100 bg-[#f8faf8] p-5 sm:p-6"><span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl"><i class="fa-solid fa-couch"></i></span><h3 class="font-extrabold mt-4">Ruang Tamu</h3><p class="text-sm text-gray-500 mt-2">Tempat bersantai dan berkumpul bersama.</p></div>
+          <div class="lift rounded-2xl border border-gray-100 bg-[#f8faf8] p-5 sm:p-6"><span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl"><i class="fa-solid fa-utensils"></i></span><h3 class="font-extrabold mt-4">Dapur</h3><p class="text-sm text-gray-500 mt-2">Area untuk kebutuhan dapur harian.</p></div>
+          <div class="lift rounded-2xl border border-gray-100 bg-[#f8faf8] p-5 sm:p-6"><span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl"><i class="fa-solid fa-droplet"></i></span><h3 class="font-extrabold mt-4">Air PDAM</h3><p class="text-sm text-gray-500 mt-2">Sumber air bersih sesuai informasi properti.</p></div>
+          <div class="lift rounded-2xl border border-gray-100 bg-[#f8faf8] p-5 sm:p-6"><span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl"><i class="fa-solid fa-bolt"></i></span><h3 class="font-extrabold mt-4">Listrik 900 VA</h3><p class="text-sm text-gray-500 mt-2">Daya listrik 900 watt sesuai informasi awal.</p></div>
+          <div class="lift rounded-2xl border border-gray-100 bg-[#f8faf8] p-5 sm:p-6"><span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl"><i class="fa-solid fa-warehouse"></i></span><h3 class="font-extrabold mt-4">Garasi & Teras</h3><p class="text-sm text-gray-500 mt-2">Area depan rumah untuk akses dan aktivitas.</p></div>
+          <div class="lift rounded-2xl border border-gray-100 bg-[#f8faf8] p-5 sm:p-6"><span class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl"><i class="fa-solid fa-car-side"></i></span><h3 class="font-extrabold mt-4">Halaman Luas</h3><p class="text-sm text-gray-500 mt-2">Area parkir luas; kapasitas kendaraan perlu dikonfirmasi.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lokasi" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header Kategori Provinsi DIY -->
+        <div class="max-w-3xl">
+          <p class="section-kicker uppercase text-xs font-extrabold text-emerald-700">Kategori Lokasi Tinggal</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Provinsi Daerah Istimewa Yogyakarta (DIY)</h2>
+          <p class="text-gray-600 leading-7 mt-3">Cakupan wilayah tinggal & layanan pendukung di 4 kabupaten dan 1 kota di Provinsi DIY. Pilih wilayah untuk melihat detail akses dan informasi ketersediaan.</p>
+        </div>
+
+        <!-- Daftar 5 Kategori Wilayah (4 Kabupaten & 1 Kota) -->
+        <div id="diy-tabs" class="flex flex-wrap gap-2.5 mt-8" role="tablist" aria-label="Kategori wilayah Provinsi DIY">
+          <button data-wilayah="bantul" role="tab" aria-selected="true" class="wilayah-btn px-4 py-2.5 rounded-full text-sm font-bold bg-emerald-900 text-white shadow transition">Kabupaten Bantul</button>
+          <button data-wilayah="gunungkidul" role="tab" aria-selected="false" class="wilayah-btn px-4 py-2.5 rounded-full text-sm font-bold bg-white text-emerald-950 hover:bg-emerald-100 border border-emerald-200/70 transition">Kabupaten Gunungkidul</button>
+          <button data-wilayah="kulonprogo" role="tab" aria-selected="false" class="wilayah-btn px-4 py-2.5 rounded-full text-sm font-bold bg-white text-emerald-950 hover:bg-emerald-100 border border-emerald-200/70 transition">Kabupaten Kulon Progo</button>
+          <button data-wilayah="sleman" role="tab" aria-selected="false" class="wilayah-btn px-4 py-2.5 rounded-full text-sm font-bold bg-white text-emerald-950 hover:bg-emerald-100 border border-emerald-200/70 transition">Kabupaten Sleman</button>
+          <button data-wilayah="yogyakarta" role="tab" aria-selected="false" class="wilayah-btn px-4 py-2.5 rounded-full text-sm font-bold bg-white text-emerald-950 hover:bg-emerald-100 border border-emerald-200/70 transition">Kota Yogyakarta</button>
+        </div>
+
+        <!-- Ringkasan Kartu 5 Wilayah -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 mt-6">
+          <button type="button" data-select-wilayah="bantul" class="wilayah-card text-left rounded-2xl border-2 border-emerald-800 bg-emerald-50/70 p-4 transition lift">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700">Kabupaten</span>
+            <h3 class="font-extrabold text-emerald-950 mt-1">Kabupaten Bantul</h3>
+            <p class="text-xs text-gray-600 mt-1.5">Akses selatan DIY, kawasan hunian asri, dan jalur menuju wisata pesisir.</p>
+          </button>
+          <button type="button" data-select-wilayah="gunungkidul" class="wilayah-card text-left rounded-2xl border border-gray-200 bg-white hover:border-emerald-400 p-4 transition lift">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700">Kabupaten</span>
+            <h3 class="font-extrabold text-emerald-950 mt-1">Kabupaten Gunungkidul</h3>
+            <p class="text-xs text-gray-600 mt-1.5">Dukungan mobilitas & perjalanan wisata/kunjungan ke wilayah timur-selatan DIY.</p>
+          </button>
+          <button type="button" data-select-wilayah="kulonprogo" class="wilayah-card text-left rounded-2xl border border-gray-200 bg-white hover:border-emerald-400 p-4 transition lift">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700">Kabupaten</span>
+            <h3 class="font-extrabold text-emerald-950 mt-1">Kabupaten Kulon Progo</h3>
+            <p class="text-xs text-gray-600 mt-1.5">Akses koridor barat DIY, kawasan bandara, dan perjalanan antarkota.</p>
+          </button>
+          <button type="button" data-select-wilayah="sleman" class="wilayah-card text-left rounded-2xl border border-gray-200 bg-white hover:border-emerald-400 p-4 transition lift">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700">Kabupaten</span>
+            <h3 class="font-extrabold text-emerald-950 mt-1">Kabupaten Sleman</h3>
+            <p class="text-xs text-gray-600 mt-1.5">Kawasan kampus, bisnis, dan akses utara DIY dengan mobilitas harian tinggi.</p>
+          </button>
+          <button type="button" data-select-wilayah="yogyakarta" class="wilayah-card text-left rounded-2xl border border-gray-200 bg-white hover:border-emerald-400 p-4 transition lift">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700">Kota</span>
+            <h3 class="font-extrabold text-emerald-950 mt-1">Kota Yogyakarta</h3>
+            <p class="text-xs text-gray-600 mt-1.5">Pusat kota DIY dengan akses mudah ke kuliner, budaya, dan aktivitas harian.</p>
+          </button>
+        </div>
+
+        <!-- Detail Wilayah Aktif & Kontak Pengelola -->
+        <div class="grid lg:grid-cols-2 gap-8 mt-8">
+          <div id="wilayah-detail" class="rounded-3xl bg-white border border-emerald-100 p-7 sm:p-10 flex flex-col justify-between">
+            <div>
+              <span id="detail-badge" class="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-emerald-900 px-3.5 py-1 text-xs font-extrabold uppercase tracking-wider">Provinsi DIY • Kabupaten</span>
+              <h3 id="detail-title" class="text-2xl sm:text-3xl font-extrabold mt-4 text-emerald-950">Kabupaten Bantul</h3>
+              <p id="detail-desc" class="text-gray-600 leading-7 mt-3">Informasi penempatan hunian dan layanan pendukung untuk area Kabupaten Bantul, Provinsi Daerah Istimewa Yogyakarta—termasuk area sekitar Perumahan Kembang Putih dan akses menuju Puncak Bibis serta kawasan kampus baru UIN Sunan Kalijaga.</p>
+              <div class="space-y-4 mt-6">
+                <div class="flex gap-3 items-start">
+                  <i class="fa-solid fa-location-dot text-emerald-700 mt-1"></i>
+                  <div>
+                    <strong id="detail-point-label">Titik Acuan & Akses</strong>
+                    <p id="detail-point-text" class="text-sm text-gray-500 mt-1">Perumahan Kembang Putih, dekat Puncak Bibis dan kawasan kampus baru UIN Sunan Kalijaga. Detail alamat dan rute dikonfirmasi bersama pengelola.</p>
+                  </div>
+                </div>
+                <div class="flex gap-3 items-start">
+                  <i class="fa-solid fa-car-side text-emerald-700 mt-1"></i>
+                  <div>
+                    <strong>Hunian, Sewa Mobil & Layanan Harian</strong>
+                    <p id="detail-service-text" class="text-sm text-gray-500 mt-1">Mendukung sewa harian, mingguan, bulanan, hingga tahunan dengan area parkir luas serta koordinasi sewa mobil, laundry, dan kebutuhan tinggal lainnya.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-7">
+              <a id="detail-maps-link" href="https://www.google.com/maps/search/?api=1&query=Kabupaten+Bantul+Daerah+Istimewa+Yogyakarta" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-800 hover:bg-emerald-900 text-white font-bold rounded-full px-6 py-3 transition">
+                <i class="fa-solid fa-map-location-dot"></i> <span id="detail-maps-label">Buka di Google Maps</span>
+              </a>
+            </div>
+            <p class="text-xs text-gray-400 mt-3">Tautan Maps merujuk ke area wilayah/lokasi umum; titik pasti properti dan layanan dikonfirmasi saat reservasi.</p>
+          </div>
+
+          <div class="rounded-3xl bg-emerald-950 text-white p-7 sm:p-10 flex flex-col justify-between">
+            <div>
+              <p class="section-kicker uppercase text-xs font-extrabold text-[#f5c451]">Hubungi pengelola</p>
+              <h3 class="text-2xl sm:text-3xl font-extrabold mt-3">Rencanakan tinggal Anda di DIY.</h3>
+              <p class="text-emerald-100 leading-7 mt-4">Tanyakan ketersediaan hunian (harian hingga tahunan), cakupan wilayah di Provinsi DIY, layanan sewa mobil, laundry, maupun kebutuhan tinggal lainnya.</p>
+              <div class="flex items-center gap-4 mt-7">
+                <span class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-3xl text-[#f5c451]"><i class="fa-brands fa-whatsapp"></i></span>
+                <div><span class="text-sm text-emerald-200">WhatsApp</span><a href="https://wa.me/6287715305408" target="_blank" rel="noopener" class="block text-xl sm:text-2xl font-extrabold hover:text-[#f5c451]">0877-1530-5408</a></div>
+              </div>
+            </div>
+            <a id="detail-wa-link" href="https://wa.me/6287715305408?text=Halo%20Yogyastay%2C%0ASaya%20ingin%20bertanya%20tentang%20hunian%20%26%20layanan%20di%20Kabupaten%20Bantul%2C%20DIY.%0ADurasi%20sewa%3A%20%0ATanggal%20mulai%3A%20%0AKebutuhan%20tambahan%20(sewa%20mobil%2Flaundry)%3A%20" target="_blank" rel="noopener" class="mt-8 inline-flex items-center justify-center gap-3 bg-[#f5c451] hover:bg-amber-300 text-emerald-950 font-extrabold px-6 py-4 rounded-full transition">
+              <i class="fa-brands fa-whatsapp text-xl"></i> <span id="detail-wa-label">Tanya Ketersediaan di Kabupaten Bantul</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-[#f5c451]">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-emerald-950">Butuh hunian sekaligus sewa mobil & laundry di Jogja?</h2>
+        <p class="text-emerald-900/80 mt-3">Hubungi kami untuk informasi paket sewa harian, mingguan, bulanan, tahunan, serta layanan pendukung lainnya di Provinsi DIY.</p>
+        <a href="https://wa.me/6287715305408?text=Halo%20Yogyastay%2C%20mohon%20informasi%20harga%20hunian%20dan%20layanan%20pendukung." target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-5 bg-emerald-950 hover:bg-emerald-900 text-white px-7 py-3.5 rounded-full font-bold transition"><i class="fa-brands fa-whatsapp text-xl"></i> Chat Sekarang</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#052e24] text-emerald-100 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-6 items-center justify-between">
+      <!-- Logo Footer -->
+      <a href="#beranda" class="flex items-center" aria-label="Yogyastay">
+        <svg class="h-11 w-auto overflow-visible" viewBox="0 0 380 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 192 38 A 46 46 0 1 1 192 78" stroke="#f5c451" stroke-width="4" stroke-linecap="round"/>
+          <text x="6" y="65" font-family="'Plus Jakarta Sans', 'Manrope', 'DM Sans', sans-serif" font-weight="800" font-size="38" letter-spacing="-0.02em" fill="#ffffff">
+            Yogyastay<tspan fill="#f5c451">.com</tspan>
+          </text>
+          <line x1="8" y1="84" x2="36" y2="84" stroke="#f5c451" stroke-width="2.2" stroke-linecap="round"/>
+          <text x="176" y="88" text-anchor="middle" font-family="'DM Sans', sans-serif" font-style="italic" font-weight="600" font-size="13.5" letter-spacing="0.01em" fill="#d1fae5">
+            Sebaiknya Solusi Kebutuhan Tinggal Anda
+          </text>
+          <line x1="316" y1="84" x2="346" y2="84" stroke="#f5c451" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <p class="text-sm text-emerald-200/80 text-center">© <span id="year"></span> Yogyastay. Hak cipta dilindungi.</p>
+      <a href="#beranda" class="text-sm hover:text-[#f5c451]">Kembali ke atas ↑</a>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/6287715305408?text=Halo%20Yogyastay%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener" aria-label="Chat WhatsApp" class="fixed bottom-5 right-5 z-30 w-14 h-14 rounded-full bg-[#20c765] hover:bg-green-600 text-white text-3xl flex items-center justify-center shadow-2xl transition hover:scale-105"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <script>
+    const LOCAL_PHOTOS = {
+      depan: 'images/depan.jpg'
+    };
+
+    const WILAYAH_DIY = {
+      bantul: {
+        badge: 'Provinsi DIY • Kabupaten',
+        title: 'Kabupaten Bantul',
+        desc: 'Pilihan lokasi tinggal dan dukungan layanan di Kabupaten Bantul, Provinsi Daerah Istimewa Yogyakarta—termasuk area sekitar Perumahan Kembang Putih dan akses menuju Puncak Bibis serta kawasan kampus baru UIN Sunan Kalijaga.',
+        pointLabel: 'Titik Acuan & Akses di Bantul',
+        pointText: 'Perumahan Kembang Putih, dekat Puncak Bibis dan kawasan kampus baru UIN Sunan Kalijaga. Konfirmasi titik pasti dan rute saat reservasi.',
+        serviceText: 'Mendukung sewa harian, mingguan, bulanan, hingga tahunan dengan area parkir luas serta layanan sewa mobil, laundry, dan kebutuhan tinggal lainnya.',
+        mapsQuery: 'Kabupaten+Bantul+Daerah+Istimewa+Yogyakarta',
+        mapsLabel: 'Cari Kabupaten Bantul di Maps'
+      },
+      gunungkidul: {
+        badge: 'Provinsi DIY • Kabupaten',
+        title: 'Kabupaten Gunungkidul',
+        desc: 'Kategori wilayah Kabupaten Gunungkidul di Provinsi DIY untuk kebutuhan tinggal, perjalanan wisata, kunjungan keluarga, maupun mobilitas harian dan transportasi.',
+        pointLabel: 'Akses & Koordinasi Gunungkidul',
+        pointText: 'Hubungi pengelola untuk memastikan ketersediaan unit, rute perjalanan, dan pengaturan waktu tempuh menuju wilayah Gunungkidul.',
+        serviceText: 'Tersedia koordinasi sewa hunian fleksibel, sewa mobil untuk perjalanan wisata/kerja, layanan laundry, serta kebutuhan tinggal lainnya.',
+        mapsQuery: 'Kabupaten+Gunungkidul+Daerah+Istimewa+Yogyakarta',
+        mapsLabel: 'Cari Kabupaten Gunungkidul di Maps'
+      },
+      kulonprogo: {
+        badge: 'Provinsi DIY • Kabupaten',
+        title: 'Kabupaten Kulon Progo',
+        desc: 'Kategori wilayah Kabupaten Kulon Progo di Provinsi DIY untuk kebutuhan hunian sementara maupun jangka panjang serta dukungan transportasi dan keperluan harian.',
+        pointLabel: 'Akses & Koordinasi Kulon Progo',
+        pointText: 'Cocok untuk koordinasi perjalanan di koridor barat DIY. Silakan konfirmasi detail lokasi dan ketersediaan layanan bersama pengelola.',
+        serviceText: 'Mendukung perencanaan durasi tinggal harian hingga tahunan, sewa mobil, laundry, dan kebutuhan pendukung selama di Yogyakarta.',
+        mapsQuery: 'Kabupaten+Kulon+Progo+Daerah+Istimewa+Yogyakarta',
+        mapsLabel: 'Cari Kabupaten Kulon Progo di Maps'
+      },
+      sleman: {
+        badge: 'Provinsi DIY • Kabupaten',
+        title: 'Kabupaten Sleman',
+        desc: 'Kategori wilayah Kabupaten Sleman di Provinsi DIY untuk kebutuhan tinggal keluarga, mahasiswa/akademisi, perjalanan kerja, maupun kunjungan jangka pendek dan panjang.',
+        pointLabel: 'Akses & Koordinasi Sleman',
+        pointText: 'Konfirmasikan kebutuhan area tujuan dan jadwal kedatangan Anda di Kabupaten Sleman melalui WhatsApp pengelola.',
+        serviceText: 'Dilengkapi opsi sewa hunian harian–tahunan, layanan sewa mobil, laundry, serta bantuan kebutuhan tinggal lainnya.',
+        mapsQuery: 'Kabupaten+Sleman+Daerah+Istimewa+Yogyakarta',
+        mapsLabel: 'Cari Kabupaten Sleman di Maps'
+      },
+      yogyakarta: {
+        badge: 'Provinsi DIY • Kota',
+        title: 'Kota Yogyakarta',
+        desc: 'Kategori wilayah Kota Yogyakarta di Provinsi DIY untuk kemudahan akses ke pusat kota, area wisata, kuliner, dan aktivitas harian selama berada di Jogja.',
+        pointLabel: 'Akses & Koordinasi Kota Yogyakarta',
+        pointText: 'Hubungi pengelola untuk informasi ketersediaan, akses menuju pusat Kota Yogyakarta, dan pengaturan jadwal menginap.',
+        serviceText: 'Mendukung sewa hunian fleksibel, area parkir luas, layanan sewa mobil, laundry, dan berbagai kebutuhan tinggal lainnya.',
+        mapsQuery: 'Kota+Yogyakarta+Daerah+Istimewa+Yogyakarta',
+        mapsLabel: 'Cari Kota Yogyakarta di Maps'
+      }
+    };
+
+    function setWilayah(key) {
+      const data = WILAYAH_DIY[key] || WILAYAH_DIY.bantul;
+      document.getElementById('detail-badge').textContent = data.badge;
+      document.getElementById('detail-title').textContent = data.title;
+      document.getElementById('detail-desc').textContent = data.desc;
+      document.getElementById('detail-point-label').textContent = data.pointLabel;
+      document.getElementById('detail-point-text').textContent = data.pointText;
+      document.getElementById('detail-service-text').textContent = data.serviceText;
+      document.getElementById('detail-maps-link').href = `https://www.google.com/maps/search/?api=1&query=${data.mapsQuery}`;
+      document.getElementById('detail-maps-label').textContent = data.mapsLabel;
+      document.getElementById('detail-wa-label').textContent = `Tanya Ketersediaan di ${data.title}`;
+
+      const waText = `Halo Yogyastay,\nSaya ingin bertanya tentang hunian & layanan di ${data.title}, DIY.\nDurasi sewa: \nTanggal mulai: \nKebutuhan tambahan (sewa mobil/laundry): `;
+      document.getElementById('detail-wa-link').href = `https://wa.me/6287715305408?text=${encodeURIComponent(waText)}`;
+
+      document.querySelectorAll('.wilayah-btn').forEach(function (btn) {
+        const isActive = btn.dataset.wilayah === key;
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.className = isActive
+          ? 'wilayah-btn px-4 py-2.5 rounded-full text-sm font-bold bg-emerald-900 text-white shadow transition'
+          : 'wilayah-btn px-4 py-2.5 rounded-full text-sm font-bold bg-white text-emerald-950 hover:bg-emerald-100 border border-emerald-200/70 transition';
+      });
+
+      document.querySelectorAll('.wilayah-card').forEach(function (card) {
+        const isActive = card.dataset.selectWilayah === key;
+        card.className = isActive
+          ? 'wilayah-card text-left rounded-2xl border-2 border-emerald-800 bg-emerald-50/70 p-4 transition lift'
+          : 'wilayah-card text-left rounded-2xl border border-gray-200 bg-white hover:border-emerald-400 p-4 transition lift';
+      });
+    }
+
+    document.querySelectorAll('.wilayah-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setWilayah(btn.dataset.wilayah);
+      });
+    });
+
+    document.querySelectorAll('.wilayah-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        setWilayah(card.dataset.selectWilayah);
+      });
+    });
+
+    setWilayah('bantul');
+
+    function placeholderSvg(label) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dcefe3"/><stop offset="1" stop-color="#a9d1b9"/></linearGradient></defs>
+        <rect width="1200" height="800" fill="url(#g)"/>
+        <circle cx="970" cy="140" r="72" fill="#f5c451" opacity=".9"/>
+        <path d="M0 620 L270 390 L430 530 L700 280 L1200 650 V800 H0Z" fill="#7daf91" opacity=".65"/>
+        <rect x="390" y="330" width="420" height="300" rx="18" fill="#fffdf6"/>
+        <path d="M340 350 L600 150 L860 350Z" fill="#0b6048"/>
+        <rect x="455" y="410" width="105" height="100" rx="6" fill="#b5d9c3"/>
+        <rect x="640" y="410" width="105" height="100" rx="6" fill="#b5d9c3"/>
+        <rect x="555" y="510" width="90" height="120" rx="6" fill="#8cbaa0"/>
+        <text x="600" y="720" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#064e3b">${label}</text>
+      </svg>`;
+      return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
+
+    const heroPhoto = document.getElementById('hero-photo');
+    if (heroPhoto) {
+      heroPhoto.src = LOCAL_PHOTOS.depan || placeholderSvg('Tampak Depan Yogyastay');
+      heroPhoto.onerror = function () {
+        this.onerror = null;
+        this.src = placeholderSvg('Tampak Depan Yogyastay');
+      };
+    }
+
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 20) {
+        header.classList.add('bg-emerald-950/95', 'shadow-lg');
+      } else {
+        header.classList.remove('bg-emerald-950/95', 'shadow-lg');
+      }
+    }, { passive: true });
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', function () {
+      const willOpen = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      menuBtn.innerHTML = willOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
